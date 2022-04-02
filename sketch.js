@@ -14,13 +14,16 @@ function setup() {
     wo = en.world
     console.log(wo)
 
-    box = Bodies.rectangle(200,100, 30,30)
+    var ball_options ={
+    restitution : 0.8
+    }
+    box = Bodies.rectangle(200,100, 30,30, ball_options)
     World.add(wo, box)
 
-    var options={
+    var ground_options={
         isStatic : true
     }
-    ground = Bodies.rectangle(200,350,400,10, options)
+    ground = Bodies.rectangle(200,350,400,10, ground_options)
     World.add(wo, ground)
    
 }
